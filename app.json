@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#3883fa",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "中国现代文学地图",
+    "backgroundColor": "#000000",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": false
+  },
+  "sitemapLocation": "sitemap.json"
+ 
+}

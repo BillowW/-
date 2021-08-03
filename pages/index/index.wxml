@@ -1,0 +1,72 @@
+<view>
+
+	<!-- 顶部地图展示区 -->
+	<map name="" class="MyMap" id="myMap" markers="{{locationPoint}}" polyline="{{pathArr}}" show-location="{{ false }}" longitude="{{centerLongitude}}" latitude="{{centerLatitude}}" scale="{{SCALE}}" bindmarkertap = '_showPlaceMsg' subkey="EVSBZ-MKZ64-EBCUV-XCXJV-G2OJ6-4WBYF" layer-style="1"></map>
+
+
+	<!--表单用于获取查询关键字 -->
+<view class="textInput">
+	<form bindsubmit="_checkAuthor" class="myForm">
+		<input type="text" placeholder="请输入作家名" class="myInput" name="keyWorld" disabled="{{disableAuthorInput}}"></input>
+		<button form-type="submit" disabled="{{disableAuthorButton}}">查询作家</button>
+	</form>
+
+	<form bindsubmit="_checkPlace" class="myForm">
+		<input type="text" placeholder="请输入地点名" class="myInput" name="keyWorld" disabled="{{disablePlaceInput}}"></input>
+		<button form-type="submit" disabled="{{disablePlaceButton}}">查询地点</button>
+	</form>
+</view>
+
+	<!--查询作者存在时,每个点详细信息展示-->
+	<view class="detail"  wx:if="{{haveAuthor}}">
+		<button bindtap="showWholePoint">总览{{authorName}}一生的创作足迹</button>
+		<view class="line">
+			<view>作者:</view>
+			<view>{{authorName}}</view>
+		</view>
+
+		<view class="line">
+			<view>作品:</view>
+			<view>{{workName}}</view>
+		</view>
+
+		<view class="line">
+			<view>作品创作时间:</view>
+			<view>{{workTime}}</view>
+		</view>
+
+		<view class="line">
+			<view>创作地点:</view>
+			<view>{{workPlace}}</view>
+		</view>
+
+		<view class="choose" wx:if="{{showButton}}">
+			<button bindtap="showBeforePoint">上一个</button>
+			<button bindtap="showNextPoint">下一个</button>
+		</view>
+
+	</view>
+</view>
+
+<!-- 搜素地点信息展示区 -->
+<view class="detail"  wx:if="{{havePlace}}">
+		<view class="line">
+			<view>作者:</view>
+			<view>{{authorName}}</view>
+		</view>
+
+		<view class="line">
+			<view>作品:</view>
+			<view>{{workName}}</view>
+		</view>
+
+		<view class="line">
+			<view>作品创作时间:</view>
+			<view>{{workTime}}</view>
+		</view>
+
+		<view class="line">
+			<view>创作地点:</view>
+			<view>{{workPlace}}</view>
+		</view>
+</view>
